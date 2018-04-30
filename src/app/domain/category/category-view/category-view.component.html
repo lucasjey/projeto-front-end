@@ -1,0 +1,38 @@
+<h2>Visualizar</h2>
+<form [formGroup]="form" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Nome</label>
+      <input type="text" formControlName="nome" disabled="" class="form-control" placeholder="nome" required>
+    
+    </div>
+  </div>
+  <button class="btn btn-primary" [routerLink]="['/category/form/', category.id]">
+    Alterar
+  </button>
+  <button class="btn btn-primary" [routerLink]="['/category/list']">
+    Cancelar
+</button>
+</form>
+
+
+
+
+
+
+
+
+<!-- <form>
+  <div class="form-row">
+      <div class="col-md-4 mb-3">
+          <label for="validationDefault01">Id</label>
+          <input type="text" formControlName="id" disabled="" class="form-control" placeholder="01" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">Nome</label>
+          <input type="text" formControlName="nome" disabled="" class="form-control" placeholder="Lary" required>
+        </div>
+  </div>
+  <a class="btn btn-primary" href="/category/form" role="button">Alterar</a>
+  <a class="btn btn-primary" href="/category/list" role="button">Voltar</a>
+</form> -->

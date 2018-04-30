@@ -1,0 +1,29 @@
+<h2>Produtos</h2>
+<table class="table table-hover ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <th scope="row">{{ produto.id }}</th>
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.marca }}</td>
+      <td>{{ produto.descricao }}</td>
+      <td>{{ produto.preco }}</td>
+
+      <!-- <td><a [routerLink]="['/produto/view', produto.id]"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+      <td><button (click)="delete(produto.id, i)">excluir</button>
+      <button [routerLink]="['/produto/form/',category.id]">alterar</button>
+      </td> -->
+      
+    </tr>
+  </tbody>
+  <a href="produto/form"><button class="btn btn-primary" type="submit" >Add Novo</button></a>
+</table>

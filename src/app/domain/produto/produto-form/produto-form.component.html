@@ -1,0 +1,36 @@
+<h2>Formulario</h2>
+<form [formGroup]="form" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Nome</label>
+      <input type="text" formControlName="nome" class="form-control" placeholder="nome" required>
+    
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Marca</label>
+        <input type="text" formControlName="nome" class="form-control" placeholder="marca" required>
+      
+      </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Descrição</label>
+      <input type="text" formControlName="nome" class="form-control" placeholder="descrição" required>
+    
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Valor</label>
+        <input type="text" formControlName="nome" class="form-control" placeholder="valor" required>
+      
+      </div>
+  </div>
+  <button class="btn btn-primary" (click)="save(form.value)" [disabled]="!form.valid" class="btn btn-primary">
+    Salvar
+  </button>
+  <button class="btn btn-primary" [routerLink]="['/category/list']">
+    Cancelar
+</button>
+</form>
+
+<pre> {{form.value | json}}</pre>
+
