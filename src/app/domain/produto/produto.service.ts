@@ -19,20 +19,17 @@ export class ProdutoService {
     let options = new RequestOptions({ headers: headers })
 
     const body = JSON.stringify(produto);
-    
-    if(produto.id){
-      return this.http
-          .put(`${URI_SERVER_API}/produto/`, body, options)
-          .map(res => res.json().content);
-  } else {
-
-    return this.http.post(`${URI_SERVER_API}/produto/`, body, options)
-      .map(response => response.json().content);
       
-  }
+      if(produto.id){
+        return this.http
+            .put(`${URI_SERVER_API}/produto/`, body, options)
+            .map(res => res.json().content);
+    } else {
 
-
-
+      return this.http.post(`${URI_SERVER_API}/produto/`, body, options)
+        .map(response => response.json().content);
+        
+    }
   }
 
   update(produto: Produto) {

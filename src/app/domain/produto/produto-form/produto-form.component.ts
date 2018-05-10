@@ -28,6 +28,9 @@ export class ProdutoFormCompoment implements OnInit {
         this.form = this.builder.group({
             id: [],
             nome: ['', [Validators.required]],
+            marca:[],
+            descricao:[],
+            preco:[]
         }, {})
 
         let produto: Produto = new Produto();
@@ -46,20 +49,19 @@ export class ProdutoFormCompoment implements OnInit {
    
 }
 // Salva a produto e retorna a lista de produtos
-    save(produto : Produto) {
-        if(produto.id == null) {
-            this.produtoService.save(produto).subscribe(data => {
-                this.router.navigate(['/produto/list']);
-                console.log('ta salvando');
-            })
-        } else {
-            this.produtoService.update(produto).subscribe(
-                () => this.router.navigate(['/produto/list'])
-            )
-        }
-
+save(produto : Produto) {
+    if(produto.id == null) {
+        this.produtoService.save(produto).subscribe(data => {
+            this.router.navigate(['/produto/list']);
+            console.log('ta salvando');
+        })
+    } else {
+        this.produtoService.update(produto).subscribe(
+            () => this.router.navigate(['/produto/list'])
+        )
     }
 
+}
      private handleError(err: any): Promise<any> {
         return Promise.reject(err.message || err)
     }
