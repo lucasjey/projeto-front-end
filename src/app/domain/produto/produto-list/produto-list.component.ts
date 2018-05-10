@@ -17,7 +17,7 @@ export class ProdutoListCompoment implements OnInit {
         this.service.findAll().subscribe(
             response => {
                 this.produtos = [];
-                response.content.forEach(element => {
+                response.forEach(element => {
                     this.produtos.push(element);
                 });
             }

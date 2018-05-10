@@ -14,6 +14,7 @@ import {ProdutoRouting} from './produto-routing.module';
 //Service
 import {ProdutoService} from './produto.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryService } from '../category/category.service';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     
     providers: [
       // services
-      ProdutoService
+      ProdutoService,
+      CategoryService
     ]
   })
   export class ProdutoModule { }

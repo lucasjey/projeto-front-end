@@ -50,7 +50,7 @@ export class ProdutoService {
 
   findAll() {
     return this.http
-      .get(`${URI_SERVER_API}/produto`).map(response => response.json());
+      .get(`${URI_SERVER_API}/produto`).map(response => response.json().content);
 
   }
 
