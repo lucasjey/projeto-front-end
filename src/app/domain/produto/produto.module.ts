@@ -23,7 +23,6 @@ import { ProdutoViewCompoment } from './produto-view/produto-view.component';
         ProdutoListCompoment,
         ProdutoFormCompoment,
         ProdutoViewCompoment,
-
     ],
     imports: [
       // angular

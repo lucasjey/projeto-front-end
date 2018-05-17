@@ -6,6 +6,7 @@
     </div>
     <div class="col-6">
       <h1 class="destaque">Icarly</h1>
+      <app-carrinho></app-carrinho>
     </div>
   </div>
 </div>
@@ -16,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" [routerLink]="['home/home']">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['produto/list']">Produto</a>

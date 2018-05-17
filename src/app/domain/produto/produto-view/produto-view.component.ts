@@ -19,7 +19,7 @@ export class ProdutoViewCompoment implements OnInit {
 
     constructor(
         private produtoService: ProdutoService,
-        private router: Router, 
+        private router: Router,
         private route: ActivatedRoute,
         private builder: FormBuilder,
         public categoryService: CategoryService,
@@ -28,44 +28,28 @@ export class ProdutoViewCompoment implements OnInit {
 
     ngOnInit() {
         //validações de campos
-
         this.produto = new Produto();
-
         this.categoryService.findAll()
-        .subscribe(categories => {
-          this.categories = categories;
-        });
-
+            .subscribe(categories => {
+                this.categories = categories;
+            });
 
         this.form = this.builder.group({
             id: [],
             nome: ['', [Validators.required]],
-            marca:['', [Validators.required]],
-            descricao:['', [Validators.required]],
-            preco:['', [Validators.required]],
-            category:this.builder.control('', [Validators.required])
+            marca: ['', [Validators.required]],
+            descricao: ['', [Validators.required]],
+            preco: ['', [Validators.required]],
+            category: this.builder.control('', [Validators.required])
         }, {})
-        
 
-        
-
-        // produto = this.route.snapshot.params['id'];
-
-        this.form.disable();
-
-        if (this.produto.id != null){
+        this.produto.id = this.route.snapshot.params['id'];
+        if (this.produto.id) {
             this.produtoService.findOne(this.produto.id)
-            .subscribe(produto => {
-                this.form = this.builder.group(produto, {});
-            });
+                .subscribe(produto => {
+                    this.form = this.builder.group(produto, {});
+                });
         }
-
-
-}
-
-teste() {
-    console.log('teste')
-}
-
+    }
 }
 

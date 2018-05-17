@@ -10,9 +10,11 @@ import { ProdutoService } from '../produto/produto.service';
 
 export class HomeCompoment implements OnInit{
     produto: Produto[];
+    
     constructor(
          public produtoService: ProdutoService,
     ){}
+
     ngOnInit(){
         this.produtoService.findAll()
         .subscribe(produtos => {
