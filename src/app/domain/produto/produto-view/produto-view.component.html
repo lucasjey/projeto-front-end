@@ -27,7 +27,7 @@
 
       <label for="exampleFormControlSelect1">Categoria</label>
 
-      <select class="form-control" formControlName="category" disabled="" >
+      <select class="form-control" formControlName="category" disabled="" [compareWith]="compararCategoria">
         <option *ngFor="let category of categories" [ngValue]="category">{{category.nome}}</option>
       </select>
 

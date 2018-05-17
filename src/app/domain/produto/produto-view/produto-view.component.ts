@@ -51,5 +51,10 @@ export class ProdutoViewCompoment implements OnInit {
                 });
         }
     }
+
+    compararCategoria (c1: Category, c2: Category): boolean{
+        return c1 && c2 ? c1.id === c2.id : c1 === c2;
+    }
+
 }
 
