@@ -2,7 +2,7 @@
 <table class="table table-hover ">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Id</th>
+      <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Marca</th>
       <th scope="col">Descrição</th>
@@ -18,14 +18,16 @@
       <td>{{ produto.marca }}</td>
       <td>{{ produto.descricao }}</td>
       <td>{{ produto.preco }}</td>
-      <td>
-        
-        <!-- <a class="btn btn-default" [routerLink]="['/category/form/', category.id]">
-          <i class="fa fa-pencil"></i>
-         </a>
-         <a (click)="delete(category.id, i)"><i class="fa fa-trash" aria-hidden="true"></i></a>
-      </td> -->
       
+      <td>
+          <a [routerLink]="['/produto/view/', produto.id]">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+        <!-- <a class="btn btn-default" [routerLink]="['/produto/form/', produto.id]">
+          <i class="fa fa-pencil"></i>
+         </a> -->
+         <a (click)="delete(produto.id, i)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+      </td> 
     </tr>
   </tbody>
   <a href="produto/form"><button class="btn btn-primary" type="submit" >Add Novo</button></a>

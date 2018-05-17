@@ -53,7 +53,7 @@ export class CategoryService {
 
   findAll() {
     return this.http
-      .get(`${URI_SERVER_API}/category`).map(response => response.json());
+      .get(`${URI_SERVER_API}/category`).map(response => response.json().content);
   }
 
   delete(id: number): Observable<boolean> {

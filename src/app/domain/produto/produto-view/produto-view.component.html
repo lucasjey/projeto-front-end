@@ -1,33 +1,33 @@
-<h2>Formulario</h2>
+<h2>Visualizar</h2>
 <form [formGroup]="form" novalidate *ngIf="categories">
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Nome</label>
-      <input type="text" formControlName="nome" class="form-control" placeholder="nome" required>
+      <input type="text" formControlName="nome" disabled="" class="form-control"ng  placeholder="nome" required>
     
     </div>
     <div class="col-md-4 mb-3">
         <label for="validationDefault01">Marca</label>
-        <input type="text" formControlName="marca" class="form-control" placeholder="marca" required>
+        <input type="text" formControlName="marca" disabled="" class="form-control" placeholder="marca" required>
       
       </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">Descrição</label>
-      <input type="text" formControlName="descricao" class="form-control" placeholder="descrição" required>      
+      <input type="text" formControlName="descricao" disabled="" class="form-control" placeholder="descrição" required>      
     </div>
   </div>
   <div class="form-row">
 
     <div class="col-md-4 mb-3">
         <label for="validationDefault01">Valor</label>
-        <input type="text" formControlName="preco" class="form-control" placeholder="preco" required>
+        <input type="text" formControlName="preco" disabled="" class="form-control" placeholder="preco" required>
       </div>
       
     <div class="form-group col-md-4 mb-3">
 
       <label for="exampleFormControlSelect1">Categoria</label>
 
-      <select class="form-control" formControlName="category" >
+      <select class="form-control" formControlName="category" disabled="" >
         <option *ngFor="let category of categories" [ngValue]="category">{{category.nome}}</option>
       </select>
 

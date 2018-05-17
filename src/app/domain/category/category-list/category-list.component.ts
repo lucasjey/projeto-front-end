@@ -17,7 +17,7 @@ export class CategoryListCompoment implements OnInit {
         this.service.findAll().subscribe(
             response => {
                 this.categories = [];
-                response.content.forEach(element => {
+                response.forEach(element => {
                     this.categories.push(element);
                 });
             }

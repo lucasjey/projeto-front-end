@@ -15,12 +15,14 @@ import {ProdutoRouting} from './produto-routing.module';
 import {ProdutoService} from './produto.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryService } from '../category/category.service';
+import { ProdutoViewCompoment } from './produto-view/produto-view.component';
 
 @NgModule({
     declarations: [
         //Componentes
         ProdutoListCompoment,
         ProdutoFormCompoment,
+        ProdutoViewCompoment,
 
     ],
     imports: [

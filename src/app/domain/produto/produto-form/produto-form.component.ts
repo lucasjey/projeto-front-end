@@ -50,12 +50,12 @@ export class ProdutoFormCompoment implements OnInit {
 
         produto = this.route.snapshot.params['id'];
 
-        if (produto != null){
-            this.produtoService.findOne(produto.id)
-            .subscribe(produto => {
-                this.form.patchValue(produto);
-            });
-        }
+        // if (produto != null){
+        //     this.produtoService.findOne(produto.id)
+        //     .subscribe(produto => {
+        //         this.form.patchValue(produto);
+        //     });
+        // }
 
 
 }
