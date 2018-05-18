@@ -1,20 +1,12 @@
-<div class="row carrinho">
-  <div class="col-4">
-    <img src="../../assets/icons/cart-200.png"/>
-  </div>
-  <div class="col-8">
-      <h3>Meu Carrinho</h3>
 
-      <div *ngIf="produtos" >
-        <span>{{produtos.length}} Produtos</span>
-      </div>
+    <div class="col-md-4 mt-2" *ngFor="let produto of carrinho">
+        <div>
+            <h5>
+                <b>Modelo:</b> {{produto.nome}}</h5>
 
-      <div *ngIf="!produtos" >
-        <span>Carrinho Vazio</span>
-      </div>
-
-      
-      
-  </div>
-</div>
-
+            <h4>
+                <b>R$ {{produto.preco}}.00</b>
+            </h4>
+            <a (click)="incluirProdutoNoCarrinho(produto)" class="btn btn-primary">Excluir</a>
+        </div>
+    </div>

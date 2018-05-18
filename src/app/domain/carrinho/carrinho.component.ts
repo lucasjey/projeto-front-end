@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Subscription} from 'rxjs/Subscription';
-
-import {CarrinhoService} from './carrinho.service';
-import {Carrinho} from './carrinho';
 import {Produto} from '../produto/produto';
 
 @Component({
@@ -14,31 +11,16 @@ import {Produto} from '../produto/produto';
 export class CarrinhoComponent implements OnInit {
 
   private subscription : Subscription;
-  produtos : Produto[];
-  ativado : boolean = true
 
-  constructor(private carrinhoService: CarrinhoService) { }
+  carrinho: Produto[]
+
+   constructor() {}
 
   ngOnInit() {
 
-    this.carrinhoService.carrinho.subscribe( (carrinho: Carrinho) => {
-      this.produtos = carrinho.produtos;
-    } );
+    this.carrinho = localStorage.getItem("carrinho") ?
+    JSON.parse(localStorage.getItem("carrinho")) :
+    [];
+
   }
-
-  ngOnDestroy() {
-    this
-        .subscription
-        .unsubscribe();
-  }
-
-  adicionarProduto(produto: Produto){
-    this.carrinhoService.adicionarProduto(produto);
-  }
-
-  removerProduto(id: number){
-    this.carrinhoService.removerProduto(id);
-  }
-
-
 }
