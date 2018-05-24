@@ -8,6 +8,7 @@ const ProdutoRoutes: Routes = [
     {path: 'list', component: ProdutoListCompoment},
     {path: 'form', component: ProdutoFormCompoment},
     {path: 'view/:id', component: ProdutoViewCompoment},
+    {path: 'form/:id', component: ProdutoFormCompoment},
 
 ];
 

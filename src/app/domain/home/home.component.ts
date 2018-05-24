@@ -27,7 +27,13 @@ export class HomeCompoment implements OnInit {
         let carrinho = localStorage.getItem("carrinho") ?
             JSON.parse(localStorage.getItem("carrinho")) :
             [];
-        carrinho.push(produto);
+
+        let itemCarrinho = {
+            produto: produto,
+            index: carrinho.length + 1
+        }
+        
+        carrinho.push(itemCarrinho);
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
     }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Subscription} from 'rxjs/Subscription';
-import {Produto} from '../produto/produto';
+import { Subscription } from 'rxjs/Subscription';
+import { Produto } from '../produto/produto';
 
 @Component({
   selector: 'app-carrinho',
@@ -10,17 +10,24 @@ import {Produto} from '../produto/produto';
 })
 export class CarrinhoComponent implements OnInit {
 
-  private subscription : Subscription;
+  private subscription: Subscription;
 
-  carrinho: Produto[]
+  carrinho: any
 
-   constructor() {}
+  constructor() { }
 
   ngOnInit() {
 
     this.carrinho = localStorage.getItem("carrinho") ?
-    JSON.parse(localStorage.getItem("carrinho")) :
-    [];
+      JSON.parse(localStorage.getItem("carrinho")) :
+      [];
 
+  }
+
+  excluirItem(index) {
+    this.carrinho = this.carrinho.filter(p => p.index !== index);
+    let carrinho = this.carrinho;
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }
 }

@@ -1,12 +1,21 @@
+<h2>Carrinho</h2>
+<table class="table table-hover ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Valor</th>
+      <th scope="col">ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of carrinho">
+      <td>{{ item.produto.nome }}</td>
+      <td>R$ {{ item.produto.preco }}.00</td>
+      <td>
+         <a (click)="excluirItem(item.index)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+      </td>      
+    </tr>
+  </tbody>
+</table>
 
-    <div class="col-md-4 mt-2" *ngFor="let produto of carrinho">
-        <div>
-            <h5>
-                <b>Modelo:</b> {{produto.nome}}</h5>
-
-            <h4>
-                <b>R$ {{produto.preco}}.00</b>
-            </h4>
-            <a (click)="incluirProdutoNoCarrinho(produto)" class="btn btn-primary">Excluir</a>
-        </div>
-    </div>
+ 

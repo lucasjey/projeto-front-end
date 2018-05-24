@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     styleUrls: ['./category-view.component.css']
 })
 
-export class CategoryViewCompoment implements OnInit{
+export class CategoryViewCompoment implements OnInit {
     form: FormGroup;
     category: Category;
 
@@ -26,7 +26,7 @@ export class CategoryViewCompoment implements OnInit{
         //validações de campos
 
         this.category = new Category();
-        
+
         this.form = this.builder.group({
             id: [],
             nome: ['', [Validators.required]],
@@ -39,14 +39,13 @@ export class CategoryViewCompoment implements OnInit{
         this.form.disable();
 
 
-        if (category != null){
+        if (category != null) {
             this.categoryService.findOne(category.id)
-            .subscribe(category => {
-                this.form = this.builder.group(category, {});
-            });
-            
-        }
+                .subscribe(category => {
+                    this.form = this.builder.group(category, {});
+                });
 
-   
-}
+        }
+    }
+
 }
