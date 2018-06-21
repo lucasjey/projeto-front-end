@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../../../shared/shared.module';
 
 //routing 
 import { CarrinhoRouting } from './carrinho-routing.module';
@@ -10,20 +11,25 @@ import { CarrinhoRouting } from './carrinho-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Component
-import { CarrinhoComponent } from './carrinho.component';
+
 import { ProdutoModule } from '../produto/produto.module';
+import { CarrinhoComponent } from './carrinho-list/carrinho.component';
+import { FecharCarrinhoComponent } from './fecharCarrinho/fecharCarrinho.component';
+import { CarrinhoService } from './carrinho.service';
 
 
 @NgModule({
   declarations: [
     //Componentes
-    CarrinhoComponent
+    CarrinhoComponent,
+    FecharCarrinhoComponent
   ],
   imports: [
     // angular
     HttpModule,
     RouterModule,
     CommonModule,
+    SharedModule,
 
     // Routing
     CarrinhoRouting,
@@ -33,6 +39,11 @@ import { ProdutoModule } from '../produto/produto.module';
     ReactiveFormsModule,
     ProdutoModule
   ],
+
+  providers: [
+    // services
+    CarrinhoService
+  ]
 
 
 })
